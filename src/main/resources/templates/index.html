@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title> LISTA </title>
+</head>
+<body>
+<a href="/dodaj"><button> DODAJ PRACOWNIKA </button></a>
+<div class="header">
+    <h1> EMPLOYEES: </h1>
+</div>
+<div class="content">
+    <table>
+        <tr th:each=" emp : ${employees}">
+            <td th:text="${emp.getFirstName()}"></td>
+            <td th:text="${emp.getLastName()}"></td>
+            <td th:href="'/info?id='+${emp.getId()}"> <a th:href="'/info?id='+${emp.getId()}">Szczegoly</a></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

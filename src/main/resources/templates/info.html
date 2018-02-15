@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/"><button>HOME</button></a>
+<a th:href="'/edycja?id='+${emp.getId()}"><button>EDYCJA</button></a>
+<p>IMIE: <span th:text="${emp.getFirstName()}"></span></p>
+<p>NAZWISKO: <span th:text="${emp.getLastName()}"></span></p>
+<p>PESEL: <span th:text="${emp.getPesel()}"></span></p>
+<p>ZAROBKI: <span th:text="${emp.getSalary()}"></span></p>
+<p>ZATRUDNIONY OD: <span th:text="${emp.getEmployedFrom()}"></span></p>
+
+</body>
+</html>

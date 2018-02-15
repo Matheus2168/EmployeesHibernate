@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/"><button>HOME</button></a>
+
+<form th:action="'/dodaj'" method="post">
+    <input type="text" placeholder="Imie..." name="firstName"/><br/>
+    <input type="text" placeholder="Nazwisko..." name="lastName"/><br/>
+    <input type="text" placeholder="PESEL..." name="pesel"/><br/>
+    <input type="text" placeholder="ZAROBKI..." name="salary"/><br/>
+    <input type="date" placeholder="DATA ZATRUDNIENIA..." name="employeedFrom"/><br/>
+    <input type="submit" value="ZATWIERDZ"/>
+</form>
+
+
+</body>
+</html>

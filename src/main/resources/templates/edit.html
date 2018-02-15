@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/"><button>HOME</button></a>
+
+<form th:action="'/edycja?id='+${emp.getId()}" method="post">
+    <input type="text" name="firstName" th:value="${emp.getFirstName()}"/><br/>
+    <input type="text" name="lastName" th:value="${emp.getLastName()}"/><br/>
+    <input type="text" name="pesel" th:value="${emp.getPesel()}"/><br/>
+    <input type="text" name="salary" th:value="${emp.getSalary()}"/><br/>
+    <input type="date" name="employeedFrom" th:value="${emp.getEmployedFrom()}"/><br/>
+    <input type="submit" value="ZATWIERDZ"/>
+</form>
+
+
+</body>
+</html>
