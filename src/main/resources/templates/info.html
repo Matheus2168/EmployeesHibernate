@@ -6,7 +6,7 @@
 </head>
 <body>
 <a href="/"><button>HOME</button></a>
-<a th:href="'/edycja?id='+${emp.getId()}"><button>EDYCJA</button></a>
+<a th:href="'/edycja/'+${emp.getId()}"><button>EDYCJA</button></a>
 <p>IMIE: <span th:text="${emp.getFirstName()}"></span></p>
 <p>NAZWISKO: <span th:text="${emp.getLastName()}"></span></p>
 <p>PESEL: <span th:text="${emp.getPesel()}"></span></p>

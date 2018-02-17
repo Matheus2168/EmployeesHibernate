@@ -71,8 +71,8 @@ public class MySqlOperator {
     }
 
     private void verifyEmployeeFields(Employee employee) throws WrongEmployeeFieldException {
-        if    ( employee.getFirstName() == null || employee.getFirstName().equals("") ||
-                employee.getLastName() == null || employee.getLastName().equals("") ||
+        if    ( employee.getFirstName() == null || employee.getFirstName().equals("") || employee.getFirstName().length()<3 ||
+                employee.getLastName() == null || employee.getLastName().equals("") || employee.getLastName().length()<3 ||
                 !employee.getPesel().matches("[0-9]+") || employee.getPesel().length()!=11){
             throw new WrongEmployeeFieldException();
 

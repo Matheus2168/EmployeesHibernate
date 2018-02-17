@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <script type="text/javascript" th:src="@{/js/edit.js}"></script>
 </head>
 <body>
 <a href="/"><button>HOME</button></a>
 
-<form th:action="'/edycja?id='+${emp.getId()}" method="post">
-    <input type="text" name="firstName" th:value="${emp.getFirstName()}"/><br/>
-    <input type="text" name="lastName" th:value="${emp.getLastName()}"/><br/>
-    <input type="text" name="pesel" th:value="${emp.getPesel()}"/><br/>
-    <input type="text" name="salary" th:value="${emp.getSalary()}"/><br/>
-    <input type="date" name="employeedFrom" th:value="${emp.getEmployedFrom()}"/><br/>
+<form th:action="'/edycja/'+${emp.getId()}" method="post" onsubmit="return validate()">
+    <input type="text" id="1" name="firstName" th:value="${emp.getFirstName()}"/><br/>
+    <input type="text" id="2" name="lastName" th:value="${emp.getLastName()}"/><br/>
+    <input type="text" id="3" name="pesel" th:value="${emp.getPesel()}"/><br/>
+    <input type="text" id="4" name="salary" th:value="${emp.getSalary()}"/><br/>
+    <input type="date" id="5" name="employeedFrom" th:value="${emp.getEmployedFrom()}"/><br/>
     <input type="submit" value="ZATWIERDZ"/>
 </form>
 

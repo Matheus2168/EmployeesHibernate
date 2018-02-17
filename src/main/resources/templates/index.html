@@ -14,7 +14,7 @@
         <tr th:each=" emp : ${employees}">
             <td th:text="${emp.getFirstName()}"></td>
             <td th:text="${emp.getLastName()}"></td>
-            <td th:href="'/info?id='+${emp.getId()}"> <a th:href="'/info?id='+${emp.getId()}">Szczegoly</a></td>
+            <td th:href="'/info/'+${emp.getId()}"> <a th:href="'/info/'+${emp.getId()}">Szczegoly</a></td>
         </tr>
     </table>
 </div>

@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import pl.hotowy.workers.ex.WrongEmployeeFieldException;
 import pl.hotowy.workers.model.Employee;
 import pl.hotowy.workers.service.MySqlOperator;
@@ -30,20 +27,20 @@ public class Controller {
         return "index";
     }
 
-    @GetMapping("/info")
+    @GetMapping("/info/{id}")
     public String info(Model model,
-                       @RequestParam(value = "id") String id){
+                       @PathVariable String id){
         model.addAttribute("emp",operator.selectEmployeebyId(id));
     return "info";
     }
 
-    @GetMapping("/edycja")
-    public String edit(Model model, @RequestParam(value = "id") String id){
+    @GetMapping("/edycja/{id}")
+    public String edit(Model model, @PathVariable String id){
         model.addAttribute("emp",operator.selectEmployeebyId(id));
         return "edit";
     }
-    @PostMapping("/edycja")
-    public String edit( @RequestParam(value = "id") String id,
+    @PostMapping("/edycja/{id}")
+    public String edit( @PathVariable String id,
                         @RequestParam(value = "firstName") String firstName,
                         @RequestParam(value = "lastName") String lastName,
                         @RequestParam(value = "pesel") String pesel,
